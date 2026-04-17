@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<title>Generador de Modelo</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <h1>Generador Genérico</h1>
+    <span>v4.1</span>
+  </header>
+
+  <!-- INPUT CARD -->
+  <div class="card">
+    <div class="label">Pega o escribe los títulos — uno por línea</div>
+    <textarea id="titulos" placeholder="Samsung Galaxy S23 128GB Azul&#10;iPhone 14 Pro 256GB Negro&#10;Xiaomi Redmi Note 12 64GB Blanco&#10;..."></textarea>
+    <div class="actions">
+      <button class="btn btn-ghost btn-sm" onclick="limpiarTodo()">Limpiar</button>
+      <div class="spacer"></div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--muted)" id="lineCount">0 títulos</span>
+      <button class="btn" onclick="generarTabla()">▶ Generar modelos</button>
+    </div>
+  </div>
+
+  <!-- RESULTS CARD -->
+  <div class="card" id="resultCard" style="display:none;">
+    <div class="section-title">
+      <h3>Modelos generados</h3>
+      <span class="count-pill" id="resCount">0</span>
+      <div class="spacer"></div>
+      <button class="btn btn-sm" onclick="copiarTabla('gen')">Copiar GEN</button>
+      <button class="btn btn-sm" style="background:rgba(123,94,167,0.7)" onclick="copiarTabla('gs1')">Copiar GS1</button>
+      <button class="btn btn-sm" style="background:var(--surface2);color:var(--text);border:1px solid var(--border)" onclick="copiarTabla('ambos')">Copiar ambos</button>
+      <span class="copy-badge" id="copyBadge">¡Copiado!</span>
+    </div>
+
+    <div class="res-list" id="resList"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
